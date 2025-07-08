@@ -73,7 +73,8 @@ function Portfolio() {
         title: "Portfolio Website",
         description: "Site web portfolio responsive avec animations",
         image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=400&h=300&fit=crop",
-        tech: ["React", "Tailwind"]
+        tech: ["React", "Tailwind"],
+        url : "https://mon-portfolio-tau-tan.vercel.app/"
       }
     ];
   
@@ -111,17 +112,17 @@ function Portfolio() {
     ];
   
     const themeClasses = darkMode 
-      ? 'bg-gray-900 text-white' 
-      : 'bg-white  dark:text-gray-900';
+       'bg-gray-900 text-white w-full min-h-screen' 
+     {/* : 'bg-white  dark:text-gray-900 w-full min-h-screen'*/};
   
     const cardClasses = darkMode 
-      ? 'bg-gray-800 border-gray-700' 
-      : 'bg-white  dark:border-gray-200';
+      ? 'bg-gray-800 border-gray-700 w-full ' 
+      : 'bg-white  dark:border-gray-200 w-full';
   
 
   return (
     <>
-       <div className={`min-h-screen transition-colors duration-300 ${themeClasses}`}>
+       <div className={`w-full min-h-screen transition-colors duration-300 ${themeClasses}`}>
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-opacity-90 border-b border-gray-100 dark:border-gray-800">
         <div className="container mx-auto px-4 py-4">
@@ -152,8 +153,9 @@ function Portfolio() {
               <button
                 onClick={() => setDarkMode(!darkMode)}
                 className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
-              >
-                {darkMode ? <Sun className="w-5 h-5"  /> : <Moon className="w-5 h-5" />}
+                >
+                  <a >{darkMode ? <Sun className="w-5 h-5"  /> : <Moon className="w-5 h-5" />}</a>
+                
               </button>
               
               <button
@@ -185,7 +187,7 @@ function Portfolio() {
       </nav>
 
       {/* Hero Section */}
-      <section id="home" className="pt-24 pb-16 min-h-screen flex items-center">
+      <section id="home" className="pt-24 pb-16 min-h-screen flex items-center w-ful">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
